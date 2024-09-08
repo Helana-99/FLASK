@@ -1,0 +1,9 @@
+{% extends './base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block main %}
+  <h1 style="text-align: center"> Add new Post via Form </h1>
+
+      {{ render_form(form) }}
+
+{% endblock %}

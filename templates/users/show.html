@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1>User Info</h1>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h4 class="text-success card-text">
+      User: <a href="{{ user.show_url }}">{{ user.first_name }} {{ user.last_name }}</a>
+    </h4>
+  </div>
+</div>
+
+<h1> User's posts:</h1>
+<ul>
+    {% for post in user.posts %}
+        <li>
+            <a href="{{ post.show_url }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('users.index') }}" class="btn btn-primary">Back to all user</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends './base.html' %}
+
+{% block main %}
+<h1>Post Info</h1>
+<div class="card" style="width: 18rem;">
+    <img src="{{ post.image_url }}" class="card-img-top" alt="{{ post.name }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ post.name }}</h5>
+        <p class="card-text">{{ post.description }}</p>
+        <p class="card-text">{{ user.name }}</p>
+        <h4 class="text-success card-text">
+            User: <a href="{{ user.show_url }}">{{ user.first_name }}</a>
+        </h4>
+        <a href="{{ url_for('posts.index')}}" class="btn btn-primary">Go to all posts</a>
+    </div>
+</div>
+{% endblock %}
